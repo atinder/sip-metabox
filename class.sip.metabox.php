@@ -45,11 +45,7 @@ if(!class_exists('SipMetaBox')){
 
 			add_action('add_meta_boxes', array($this,'add_meta_box'));
 			add_action('save_post', array($this,'save_post'));
-<<<<<<< HEAD:class.sip.metabox.php
-			add_action('admin_enqueue_scripts',array($this,'enqueue'));
-=======
 			add_action('admin_enqueue_scripts',array($this,'admin_enqueue_scripts'));
->>>>>>> updated:class.sip.metabox.php
 		}
 
 		/**
@@ -105,11 +101,7 @@ if(!class_exists('SipMetaBox')){
 				}
 
 				if(class_exists($field_class)){
-<<<<<<< HEAD:class.sip.metabox.php
-					$val = isset($value[0][$field['id']]) ? $value[0][$field['id']] : '';
-=======
 					$val = isset($value[0][$field['id']]) ? $value[0][$field['id']] : $field['std'];
->>>>>>> updated:class.sip.metabox.php
 					$render = call_user_func_array(array($field_class,'render'),array($meta_box['id'],$val,$field));
 				}
 
@@ -163,15 +155,6 @@ if(!class_exists('SipMetaBox')){
 		 * Enqueue required scripts or styles
 		 */
 		public function admin_enqueue_scripts(){
-
-			$screen = get_current_screen();
-
-			// Enqueue scripts and styles for registered pages (post types) only
-			if ( 'post' != $screen->base || ! in_array( $screen->post_type, $this->pagesArray ) )
-				return;
-
-    		wp_enqueue_style( 'sip-metabox-class', $this->root_path . '/css/style.css');
-    		wp_enqueue_script( 'sip-metabox-class', $this->root_path . '/js/custom.js');
 
 			$screen = get_current_screen();
 

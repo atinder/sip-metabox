@@ -11,24 +11,15 @@ defined( 'ABSPATH' ) || exit;
 
 require_once dirname(__FILE__) . '/class.sip.metabox.php';
 
-<<<<<<< HEAD:sip-metabox.php
-class SipMetaBox_Test{
-=======
 class SipMetaBoxDemo{
->>>>>>> updated:sip-metabox.php
 
 	private $_wrapper;
 	private $meta_boxes = array();
 
 	public function __construct(){
-<<<<<<< HEAD:sip-metabox.php
-		
-		$this->config();
-=======
 		if ( is_admin() )
     	add_action( 'load-post.php',array($this, 'config' ));
    		add_action( 'load-post-new.php',array($this, 'config' ));
->>>>>>> updated:sip-metabox.php
 
 	}
 	public static function config(){
@@ -36,11 +27,7 @@ class SipMetaBoxDemo{
 		$meta_boxes[] = array(
 						'id' => 'sip_meta',
 						'title' => 'Sip Metabox',
-<<<<<<< HEAD:sip-metabox.php
-						'page' => 'post',
-=======
 						'page' => 'page',
->>>>>>> updated:sip-metabox.php
 						'context' => 'normal',
 						'priority' => 'high',
 						'fields' => array(
@@ -126,29 +113,14 @@ class SipMetaBoxDemo{
 							
 							)
 						);
-<<<<<<< HEAD:sip-metabox.php
-		$root_path = plugins_url('', __FILE__);
-
-		$this->_wrapper = new SipMetaBox($meta_boxes,$root_path);
-
-
-	}
-=======
 
 		$root_path = plugins_url('', __FILE__);
->>>>>>> updated:sip-metabox.php
 
 		$wrapper = new SipMetaBox($meta_boxes,$root_path);
 
 
-<<<<<<< HEAD:sip-metabox.php
-function call_class(){
-	new SipMetaBox_Test();
-	
-=======
 	}
 
->>>>>>> updated:sip-metabox.php
 }
 new SipMetaBoxDemo();
 ?>
